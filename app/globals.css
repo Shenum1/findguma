@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+/*
+ * Color palette — placeholder direction per instruct.md Section 5: aged/digital
+ * but not the cliché neon-on-black "retro computer" look. Swap these values
+ * once real brand assets/colors exist; nothing else needs to change.
+ */
+:root {
+  --color-canvas: #f4f1ea;
+  --color-canvas-raised: #ffffff;
+  --color-ink: #1b1b18;
+  --color-muted: #8c8c86;
+  --color-line: #d8d3c4;
+  --color-blue: #5c7a99;
+  --color-green: #6f8265;
+  --color-red: #b36a5e;
+  --color-accent: #d98c4a;
+}
+
+@theme inline {
+  --color-canvas: var(--color-canvas);
+  --color-canvas-raised: var(--color-canvas-raised);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-line: var(--color-line);
+  --color-blue: var(--color-blue);
+  --color-green: var(--color-green);
+  --color-red: var(--color-red);
+  --color-accent: var(--color-accent);
+
+  --font-pixel: var(--font-vt323);
+  --font-display: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-canvas);
+}
+
+/* Visible, unmistakable focus ring everywhere — retro styling never removes it. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Stepped/pixel-cut corners for the window-chrome primitive. Pure CSS, no assets. */
+.pixel-corners {
+  clip-path: polygon(
+    0 6px,
+    6px 6px,
+    6px 0,
+    calc(100% - 6px) 0,
+    calc(100% - 6px) 6px,
+    100% 6px,
+    100% calc(100% - 6px),
+    calc(100% - 6px) calc(100% - 6px),
+    calc(100% - 6px) 100%,
+    6px 100%,
+    6px calc(100% - 6px),
+    0 calc(100% - 6px)
+  );
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 18s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+}
