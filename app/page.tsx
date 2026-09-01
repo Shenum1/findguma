@@ -27,8 +27,8 @@ export default async function HomePage() {
     <>
       <HomeStage>
         <Hero name={settings.artist.name} tagline={settings.artist.tagline} />
-        {latestRelease ? <CurrentReleaseCallout release={latestRelease} /> : null}
         <Marquee text={settings.statusLine} />
+        {latestRelease ? <CurrentReleaseCallout release={latestRelease} /> : null}
         <div className="mx-auto flex max-w-5xl justify-center px-4 py-10 sm:px-6">
           <SocialLinks />
         </div>
