@@ -16,7 +16,7 @@ export function CurrentReleaseCallout({ release }: { release: Release }) {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-16 sm:px-6">
+    <div className="mx-auto max-w-5xl px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
       <div className="pixel-corners flex flex-col gap-5 border border-ink/70 bg-canvas-raised p-5 sm:flex-row sm:items-center sm:p-6">
         <PlaceholderMedia
           label="COVER ART — PLACEHOLDER"
