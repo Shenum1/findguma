@@ -66,31 +66,3 @@ export function MerchNavLink({ onNavigate }: { onNavigate?: () => void }) {
     </Link>
   );
 }
-
-export function HomeWordmark({ wordmark, name }: { wordmark: string; name: string }) {
-  const pathname = usePathname();
-  const { closePanel } = usePanel();
-  const isHome = pathname === "/";
-
-  const className = "font-display text-2xl font-semibold tracking-tight text-ink hover:text-accent transition-colors";
-
-  if (!isHome) {
-    return (
-      <Link id="nav-trigger-home" href="/" className={className} aria-label={name}>
-        {wordmark}
-      </Link>
-    );
-  }
-
-  return (
-    <button
-      type="button"
-      id="nav-trigger-home"
-      onClick={() => closePanel()}
-      className={className}
-      aria-label={`${name} — go to Home`}
-    >
-      {wordmark}
-    </button>
-  );
-}

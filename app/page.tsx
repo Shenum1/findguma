@@ -13,7 +13,6 @@ import { AboutPanel } from "@/components/about/AboutPanel";
 import { MusicPanel } from "@/components/music/MusicPanel";
 import { ArchivePanel } from "@/components/archive/ArchivePanel";
 import { TourPanel } from "@/components/tour/TourPanel";
-import { ChatWindow } from "@/components/chat/ChatWindow";
 
 export default async function HomePage() {
   const [settings, latestRelease, releases, albums, freestyles, upcoming, past] = await Promise.all([
@@ -29,17 +28,17 @@ export default async function HomePage() {
   return (
     <>
       <HomeStage>
-        <Hero name={settings.artist.name} tagline={settings.artist.tagline} />
+        <Hero
+          name={settings.artist.name}
+          tagline={settings.artist.tagline}
+          wordmark={settings.artist.wordmark}
+        />
         <Marquee text={settings.statusLine} />
         {latestRelease ? <CurrentReleaseCallout release={latestRelease} /> : null}
         <div className="mx-auto flex max-w-5xl justify-center px-4 py-10 sm:px-6">
           <SocialLinks />
         </div>
       </HomeStage>
-
-      <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
-        <ChatWindow variant="embedded" />
-      </div>
 
       <div className="mx-auto max-w-5xl space-y-6 px-4 py-6 sm:px-6">
         <Panel id="about" title="ABOUT.SYS">

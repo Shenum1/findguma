@@ -64,7 +64,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         </a>
         <div id="app-root" className="flex min-h-screen flex-col">
           <Providers>
-            <SiteHeader artistName={artist.name} wordmark={artist.wordmark} />
+            <SiteHeader />
             <main id="main-content" className="flex-1">
               {children}
             </main>

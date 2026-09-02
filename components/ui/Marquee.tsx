@@ -5,9 +5,13 @@ export function Marquee({ text }: { text: string }) {
       role="status"
       aria-label={text}
     >
-      <div className="flex w-max animate-marquee gap-12 whitespace-nowrap font-pixel text-base tracking-wide text-muted motion-reduce:animate-none">
-        <span aria-hidden={false}>{text}</span>
-        <span aria-hidden="true">{text}</span>
+      <div className="flex w-max animate-marquee whitespace-nowrap font-pixel text-base tracking-wide text-muted motion-reduce:animate-none">
+        <span aria-hidden={false} className="pr-12">
+          {text}
+        </span>
+        <span aria-hidden="true" className="pr-12">
+          {text}
+        </span>
       </div>
     </div>
   );
