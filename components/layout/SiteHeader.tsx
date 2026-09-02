@@ -1,6 +1,8 @@
 import { HomeWordmark, NavLink, MerchNavLink } from "@/components/layout/NavLink";
 import { PANEL_NAV_ITEMS } from "@/components/layout/navItems";
 import { MobileMenu } from "@/components/layout/MobileMenu";
+import { MobileChatButton } from "@/components/chat/MobileChatButton";
+import { ChatNavLink } from "@/components/chat/ChatNavLink";
 
 export function SiteHeader({ artistName, wordmark }: { artistName: string; wordmark: string }) {
   return (
@@ -12,8 +14,12 @@ export function SiteHeader({ artistName, wordmark }: { artistName: string; wordm
             <NavLink key={item.id} id={item.id} label={item.label} assignTriggerId />
           ))}
           <MerchNavLink />
+          <ChatNavLink />
         </nav>
-        <MobileMenu />
+        <div className="flex items-center gap-2 sm:hidden">
+          <MobileChatButton />
+          <MobileMenu />
+        </div>
       </div>
     </header>
   );

@@ -40,11 +40,13 @@ const ALBUMS: PhotoAlbum[] = [
     ],
   },
   {
-    slug: "unreleased",
-    title: "UNRELEASED",
+    // Renamed from "unreleased" to avoid colliding with the new, distinct
+    // auth-gated Archive > Unreleased section (audio/video, not photos).
+    slug: "outtakes",
+    title: "OUTTAKES",
     description: "[Unreleased / archival visuals go here.]",
     published: true,
-    photos: [{ id: "unreleased-1", caption: "[Caption]", aspect: "landscape" }],
+    photos: [{ id: "outtakes-1", caption: "[Caption]", aspect: "landscape" }],
   },
 ];
 

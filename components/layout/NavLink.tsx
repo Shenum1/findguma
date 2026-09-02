@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { usePanel, type PanelId } from "@/components/panels/useActivePanel";
 import { cn } from "@/lib/utils/cn";
 
-const BASE_CLASS =
+export const BASE_CLASS =
   "font-pixel text-lg tracking-wide uppercase px-1 py-0.5 border-b-2 border-transparent transition-colors hover:text-accent";
 const ACTIVE_CLASS = "border-accent text-accent";
 

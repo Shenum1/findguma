@@ -7,7 +7,7 @@ export function Badge({
   className,
 }: {
   children: ReactNode;
-  tone?: "muted" | "accent" | "green" | "red";
+  tone?: "muted" | "accent" | "green" | "red" | "blue";
   className?: string;
 }) {
   const toneClass = {
@@ -15,6 +15,7 @@ export function Badge({
     accent: "border-accent text-accent",
     green: "border-green text-green",
     red: "border-red text-red",
+    blue: "border-blue text-blue",
   }[tone];
 
   return (

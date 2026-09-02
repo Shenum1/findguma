@@ -81,6 +81,15 @@ export interface PhotoAlbum {
   published: boolean;
 }
 
+export interface Freestyle {
+  id: string;
+  title: string;
+  date?: string;
+  description?: string;
+  previewAudioUrl?: string;
+  externalUrl?: string;
+}
+
 export type StockStatus = "in_stock" | "low_stock" | "out_of_stock" | "coming_soon";
 
 export interface MerchVariant {
